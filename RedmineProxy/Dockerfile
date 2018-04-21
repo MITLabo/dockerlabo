@@ -16,6 +16,6 @@ ARG PPASS="ZZZZZ"
  
 RUN echo $'[powershell]\n\
 #baseurl='$BASEURL$'\n\
-proxy-user = "'$PUSER$':'$PPASS$'"
-proxy = "http://$PHOST$:$PPORT$"
+proxy-user = "'$PUSER$':'$PPASS$'"\n\
+proxy = "http://$PHOST$:$PPORT$"\n '\
 >> /etc/curlrc
