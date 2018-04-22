@@ -1,0 +1,38 @@
+version: '3.1'
+
+services:
+#  redmineserv:
+#    build: .
+#    depends_on:
+#      - redminePro
+#      - RedmineDB
+  redminePro:
+    image: redmine:compredmine
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PUSER=2222
+        - PPASS=5555
+    container_name: comp-redmine
+    ports:
+      - "3333:3000"
+    volumes:
+      - .:/Local
+    links:
+      - RedmineDB
+    depends_on:
+      - RedmineDB
+    environment:  
+      REDMINE_DB_POSTGRES: RedmineDB
+      REDMINE_DB_PASSWORD: secret
+  RedmineDB:
+    image: postgres
+    container_name: comp-postgres
+    environment:
+#      POSTGRES_ROOT_PASSWORD: secret
+#      POSTGRES_DATABASE: redmine
+      POSTGRES_PASSWORD: secret
+      POSTGRES_USER: redmine
+    expose:
+      - "5432"

@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
   wget \
   curl
 
-#This param is your VirtualBox VM*s gateway adress.
+#This param is your VirtualBox VM's gateway adress.
 ARG PHOST="10.0.2.2"
 ARG PPORT="8080"
 ARG PUSER="XXXXX"
