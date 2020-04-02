@@ -1,0 +1,3 @@
+copy /b "1809_vba.0"  "1809_vba.pdf"
+copy /b "1809_vba.pdf" + "1809_vba.1"  "1809_vba.pdf"
+copy /b "1809_vba.pdf" + "1809_vba.2"  "1809_vba.pdf"
